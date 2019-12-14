@@ -9,9 +9,15 @@ onmt_train -data saved_preprocess.low -save_model eng_ipa_model1 -gpu_ranks 0
 Translate:
 onmt_translate -gpu 0 -model eng_ipa_model1_steps/eng_ipa_model1_step_100000.pt -src word_src_test.txt -tgt ipa_tgt_test.txt -replace_unk -verbose -output model1_step_100000_pred
 
-Evaluation: 
+Bleu Evaluation: 
 input:	perl perl_evaluation/multi-bleu.perl ipa_tgt_test.txt < model1_step_100000_pred
-output: BLEU = 92.89, 97.7/94.5/91.4/88.7 (BP=0.998, ratio=0.998, hyp_len=37229, 		ref_len=37287)
+output: BLEU = 92.89, 97.7/94.5/91.4/88.7 (BP=0.998, ratio=0.998, hyp_len=37229, ref_len=37287)
+
+Levenshtein Distance Evaluation:
+input: 	python levenshteinDistance.py
+output:	The average Levenshtein distance for the set of predicted IPA translations is 0.341
+n=4032
+
 
 
 

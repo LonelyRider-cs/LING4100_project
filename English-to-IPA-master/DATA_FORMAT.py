@@ -35,6 +35,7 @@ def ONMT_DATA_FORMAT(WORD_IPA_LIST, src, tgt):
         #print(word_ipa)
         temp_word = '< '
         temp_ipa = '< '
+        #for the word
         for i in range(len(word_ipa[0])):
             temp_word += word_ipa[0][i]
             temp_word += ' '
@@ -42,6 +43,7 @@ def ONMT_DATA_FORMAT(WORD_IPA_LIST, src, tgt):
                 temp_word += '>'
         ONMT_WORD_LIST.append(temp_word)
         src_f.write(temp_word + '\n')
+        #for the ipa
         for i in range(len(word_ipa[1])):
             if(word_ipa[1][i] != 'ˈ' and word_ipa[1][i] != 'ˌ'):
                 temp_ipa += word_ipa[1][i]
@@ -53,8 +55,8 @@ def ONMT_DATA_FORMAT(WORD_IPA_LIST, src, tgt):
 
     src_f.close()
     tgt_f.close()
-    print(ONMT_WORD_LIST[0])
-    print(ONMT_IPA_LIST[0])
+    #print(ONMT_WORD_LIST[0])
+    #print(ONMT_IPA_LIST[0])
 
 if __name__ == '__main__':
     train_WORD_IPA_LIST, val_WORD_IPA_LIST, test_WORD_IPA_LIST = importDATA()
