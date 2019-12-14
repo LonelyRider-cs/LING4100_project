@@ -5,7 +5,7 @@ The goal was to create an application/script that could take any English word as
 
 
 ## Running the Code
-###### Fresh Build - All I have is wordList.txt and your code
+##### Fresh Build - All I have is wordList.txt and your code
 
 Run all commands within the *English-to-IPA-master* directory.
 
@@ -29,7 +29,7 @@ To generate new IPA spellings of unseen words, run the shell script with the onl
 
 8. `bash ipa_translator.sh your-word-goes-here`
 
-###### I just want to translate individual words, who cares about the model
+##### I just want to translate individual words, who cares about the model
 Run all commands within the *English-to-IPA-master* directory.
 
 1. First download the *English-to-IPA-master.zip* and extract all the files.
