@@ -1,13 +1,13 @@
 # English to IPA Translator for any Word using a neural network
 
 ## Overview
-The goal was to create an application/script that could take any English word as input and return the IPA spelling of that word. This was done using OpenNMT neural network for language translation.
+The goal was to create an application/script that could take any English word as input and return the IPA spelling of that word. This was done using OpenNMT neural network for language translation. All files were created by me unless cited otherwise.
 
 
 ## Running the Code
 ##### Fresh Build - All I have is wordList.txt and your code
 
-Run all commands within the *English-to-IPA-master* directory.
+Run all commands within the *LING4100_Final_Project* directory.
 
 The first step is to correctly format our data using python. If you want to shuffle your data differently than mine go into *DATA_FORMAT.py* and change the random seed before running.
 
@@ -30,7 +30,7 @@ To generate new IPA spellings of unseen words, run the shell script with the onl
 8. `bash ipa_translator.sh your-word-goes-here`
 
 ##### I just want to translate individual words, who cares about the model
-Run all commands within the *English-to-IPA-master* directory.
+Run all commands within the *LING4100_Final_Project* directory.
 
 1. First download the *English-to-IPA-master.zip* and extract all the files.
 
