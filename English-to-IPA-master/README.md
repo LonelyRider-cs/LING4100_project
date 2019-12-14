@@ -10,19 +10,23 @@ The goal was to create an application/script that could take any English word as
 Run all commands within the *English-to-IPA-master* directory.
 
 The first step is to correctly format our data using python. If you want to shuffle your data differently than mine go into *DATA_FORMAT.py* and change the random seed before running.
+
 1. `python createDATA.py`
 2. `python DATA_FORMAT.py`
 
 Now we want to preprocess, train, and translate using OpenNMT.
+
 3. `onmt_preprocess -train_src word_src_train.txt -train_tgt ipa_tgt_train.txt -valid_src word_src_val.txt -valid_tgt ipa_tgt_val.txt -save_data saved_preprocess.low -lower`
 4. `onmt_train -data saved_preprocess.low -save_model eng_ipa_model1 -gpu_ranks 0`
 5. `onmt_translate -gpu 0 -model eng_ipa_model1_steps/eng_ipa_model1_step_100000.pt -src word_src_test.txt -tgt ipa_tgt_test.txt -replace_unk -verbose -output model1_step_100000_pred`
 
 Evaluating the model.
+
 6. `perl perl_evaluation/multi-bleu.perl ipa_tgt_test.txt < model1_step_100000_pred`
 7. `python levenshteinDistance.py`
 
 To generate new IPA spellings of unseen words, run the shell script with the only argument being the word you want translated to IPA.
+
 8. `bash ipa_translator.sh your-word-goes-here`
 
 ###### I just want to translate individual words, who cares about the model
@@ -31,6 +35,7 @@ Run all commands within the *English-to-IPA-master* directory.
 1. First download the *English-to-IPA-master.zip* and extract all the files.
 
 To generate new IPA spellings of unseen words, run the shell script with the only argument being the word you want translated to IPA.
+
 2. `bash ipa_translator.sh your-word-goes-here`
 
 
